@@ -49,86 +49,93 @@
     <section id="text-conditioned">
       <h2>Text-conditioned generation</h2>
       <p class="lede">
-        Rows share the same text prompt (SDD-style captions); columns compare methods. Replace paths under <code>audio/text-conditioned/</code>.
+        Each row is one text prompt. Columns compare the base model (no fine-tuning) against the fine-tuned LMDM variants in block-causal (BC) and encoder-decoder (ED) configurations. Each cell shows two samples: <strong>primed</strong> (model given an audio context prefix) and <strong>unprimed</strong> (generation from scratch).
       </p>
       <div class="compare-wrap">
         <table class="compare-table">
           <thead>
             <tr>
               <th>Prompt</th>
-              <th>Base LMDM</th>
-              <th>LMDM (Enc–Dec)</th>
-              <th>LMDM (Block-causal)</th>
-              <th>Magenta RealTime</th>
-              <th>Stable Audio Open</th>
-              <th>MusicGen stereo</th>
+              <th>Base (BC)</th>
+              <th>Base (ED)</th>
+              <th>LMDM (BC)</th>
+              <th>LMDM (ED)</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="prompt-cell">
-                <!-- REPLACE_PROMPT_1 -->
-                Prompt example 1 (paste caption)
-              </td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex01-base.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex01-encdec.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex01-block.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex01-magenta.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex01-sao.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex01-musicgen.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
+              <td class="prompt-cell">Ambient · electronic · soundtrack. Outer-space mood; otherworldly landscapes in science fiction settings. 4/4.</td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_bc/08_1171008_chunk0_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_bc/08_1171008_chunk0_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_ed/08_1171008_chunk0_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_ed/08_1171008_chunk0_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/bc/08_1171008_chunk0_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/bc/08_1171008_chunk0_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/ed/08_1171008_chunk0_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/ed/08_1171008_chunk0_unprimed.wav" type="audio/wav"></audio></td>
             </tr>
             <tr>
-              <td class="prompt-cell">
-                <!-- REPLACE_PROMPT_2 -->
-                Prompt example 2 (paste caption)
-              </td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex02-base.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex02-encdec.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex02-block.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex02-magenta.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex02-sao.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex02-musicgen.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
+              <td class="prompt-cell">Easy listening · electronic. Calm, dreamlike, serene soundscape. 4/4 · ~129 BPM.</td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_bc/43_153043_chunk7_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_bc/43_153043_chunk7_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_ed/43_153043_chunk7_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_ed/43_153043_chunk7_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/bc/43_153043_chunk7_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/bc/43_153043_chunk7_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/ed/43_153043_chunk7_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/ed/43_153043_chunk7_unprimed.wav" type="audio/wav"></audio></td>
             </tr>
             <tr>
-              <td class="prompt-cell">
-                <!-- REPLACE_PROMPT_3 -->
-                Prompt example 3 (paste caption)
-              </td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex03-base.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex03-encdec.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex03-block.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex03-magenta.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex03-sao.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex03-musicgen.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
+              <td class="prompt-cell">Classical · piano. Lively interlude with a sense of resolution; drama TV closing scene.</td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_bc/51_272851_chunk0_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_bc/51_272851_chunk0_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_ed/51_272851_chunk0_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_ed/51_272851_chunk0_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/bc/51_272851_chunk0_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/bc/51_272851_chunk0_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/ed/51_272851_chunk0_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/ed/51_272851_chunk0_unprimed.wav" type="audio/wav"></audio></td>
             </tr>
             <tr>
-              <td class="prompt-cell">
-                <!-- REPLACE_PROMPT_4 -->
-                Prompt example 4 (paste caption)
-              </td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex04-base.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex04-encdec.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex04-block.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex04-magenta.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex04-sao.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex04-musicgen.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
+              <td class="prompt-cell">Electronic · soundtrack. Calm mood; drama movie scene. 4/4 · 80 BPM.</td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_bc/60_1233160_chunk3_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_bc/60_1233160_chunk3_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_ed/60_1233160_chunk3_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_ed/60_1233160_chunk3_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/bc/60_1233160_chunk3_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/bc/60_1233160_chunk3_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/ed/60_1233160_chunk3_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/ed/60_1233160_chunk3_unprimed.wav" type="audio/wav"></audio></td>
             </tr>
             <tr>
-              <td class="prompt-cell">
-                <!-- REPLACE_PROMPT_5 -->
-                Prompt example 5 (paste caption)
-              </td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex05-base.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex05-encdec.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex05-block.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex05-magenta.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex05-sao.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/text-conditioned/ex05-musicgen.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
+              <td class="prompt-cell">Techno · electronic · trance. G minor · 125 BPM. Deep, emotional, powerful; beach / summer setting.</td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_bc/71_1353371_chunk1_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_bc/71_1353371_chunk1_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_ed/71_1353371_chunk1_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_ed/71_1353371_chunk1_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/bc/71_1353371_chunk1_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/bc/71_1353371_chunk1_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/ed/71_1353371_chunk1_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/ed/71_1353371_chunk1_unprimed.wav" type="audio/wav"></audio></td>
+            </tr>
+            <tr>
+              <td class="prompt-cell">Ambient · video game soundtrack. Synth melody · C major · 86 BPM. Upbeat, action-packed scene. 4/4.</td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_bc/76_665776_chunk6_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_bc/76_665776_chunk6_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_ed/76_665776_chunk6_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_ed/76_665776_chunk6_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/bc/76_665776_chunk6_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/bc/76_665776_chunk6_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/ed/76_665776_chunk6_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/ed/76_665776_chunk6_unprimed.wav" type="audio/wav"></audio></td>
+            </tr>
+            <tr>
+              <td class="prompt-cell">Deep house · electronic. Warm, groovy. Bass · drums · synth. 4/4 · 109 BPM. Futuristic club.</td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_bc/80_889180_chunk6_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_bc/80_889180_chunk6_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_ed/80_889180_chunk6_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_ed/80_889180_chunk6_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/bc/80_889180_chunk6_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/bc/80_889180_chunk6_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/ed/80_889180_chunk6_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/ed/80_889180_chunk6_unprimed.wav" type="audio/wav"></audio></td>
+            </tr>
+            <tr>
+              <td class="prompt-cell">Classical · ambient. Dominant piano. Calming, relaxing; spa or meditation. Slow-paced · 4/4.</td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_bc/84_1056584_chunk0_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_bc/84_1056584_chunk0_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_ed/84_1056584_chunk0_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_ed/84_1056584_chunk0_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/bc/84_1056584_chunk0_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/bc/84_1056584_chunk0_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/ed/84_1056584_chunk0_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/ed/84_1056584_chunk0_unprimed.wav" type="audio/wav"></audio></td>
+            </tr>
+            <tr>
+              <td class="prompt-cell">Blues · classic rock · pop rock. Uplifting. 4/4 · 136 BPM. Character beginning a journey or adventure.</td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_bc/95_1079295_chunk2_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_bc/95_1079295_chunk2_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_ed/95_1079295_chunk2_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_ed/95_1079295_chunk2_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/bc/95_1079295_chunk2_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/bc/95_1079295_chunk2_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/ed/95_1079295_chunk2_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/ed/95_1079295_chunk2_unprimed.wav" type="audio/wav"></audio></td>
+            </tr>
+            <tr>
+              <td class="prompt-cell">Classical · piano. Emotional. 4/4 · 125 BPM. Steady, measured; reflective or narrative scenarios.</td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_bc/96_997096_chunk1_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_bc/96_997096_chunk1_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_ed/96_997096_chunk1_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/sf_ed/96_997096_chunk1_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/bc/96_997096_chunk1_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/bc/96_997096_chunk1_unprimed.wav" type="audio/wav"></audio></td>
+              <td><span class="audio-label">primed</span><audio controls preload="none"><source src="audio/text-conditioned/ed/96_997096_chunk1_primed.wav" type="audio/wav"></audio><span class="audio-label">unprimed</span><audio controls preload="none"><source src="audio/text-conditioned/ed/96_997096_chunk1_unprimed.wav" type="audio/wav"></audio></td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p class="placeholder-note">Hyperparameters and evaluation protocol match the paper appendix.</p>
     </section>
 
     <section id="prompt-transitions">
