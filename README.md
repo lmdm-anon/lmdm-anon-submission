@@ -1,6 +1,6 @@
 # Anonymous supplementary website (LMDM)
 
-Static GitHub Pages site for audio samples and user-study video embeds.
+Static GitHub Pages site for audio samples and LMDM generative delay interaction video embeds.
 
 ## Publish on GitHub Pages
 
@@ -15,7 +15,7 @@ Site URL: `https://lmdm-anon.github.io/lmdm-anon-submission/`
 
 - **Audio**: Place files under `audio/` in the subfolders that match each section, then update `src` on each `<audio>` element in `index.html` (search for `REPLACE_AUDIO`).
 - **Sketch images**: Place PNG/WebP under `images/sketch-conditioned/` and set `<img src="...">` (search for `REPLACE_IMAGE`).
-- **YouTube**: Each embed starts as `src="about:blank"`. Search `REPLACE_YOUTUBE` and set `src="https://www.youtube.com/embed/VIDEO_ID"` (optional privacy URL: `https://www.youtube-nocookie.com/embed/VIDEO_ID`).
+- **YouTube**: “LMDM Generative Delay Interactions” embeds are set in `index.html`; swap iframe URLs there if you re-upload clips (optional privacy URL: `https://www.youtube-nocookie.com/embed/VIDEO_ID`).
 
 ## Local preview
 

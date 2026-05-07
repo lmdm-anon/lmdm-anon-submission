@@ -158,7 +158,7 @@ section h2 {
 
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1.5rem;
   margin-top: 1rem;
 }
@@ -185,11 +185,24 @@ section h2 {
   width: 100%;
   aspect-ratio: 16 / 9;
   border: 0;
-  background: #e8e8e8;
 }
 
-.video-card iframe[src="about:blank"] {
-  border: 1px dashed var(--border);
+.lookahead-legend {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25rem 1rem;
+  margin: 0.75rem 0 1.25rem;
+  font-size: 0.9rem;
+}
+
+.lookahead-legend dt {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.lookahead-legend dd {
+  margin: 0;
+  color: var(--muted);
 }
 
 .placeholder-note {

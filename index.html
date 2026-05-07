@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Helps YouTube embeds receive a valid Referer (avoids Error 153 with strict referrer policies). -->
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Live Music Diffusion Models — Supplementary Materials</title>
   <meta name="description" content="Anonymous supplementary page for audio samples and user study videos (paper submission).">
   <link rel="stylesheet" href="styles.css">
@@ -17,9 +19,8 @@
           <li><a href="#overview">Overview</a></li>
           <li><a href="#text-conditioned">Text-conditioned</a></li>
           <li><a href="#prompt-transitions">Prompt transitions</a></li>
-          <li><a href="#sketch-conditioned">Sketch-conditioned</a></li>
           <li><a href="#accompaniment">Accompaniment</a></li>
-          <li><a href="#user-study">User study</a></li>
+          <li><a href="#generative-delay">LMDM Generative Delay Interactions</a></li>
         </ul>
       </nav>
     </div>
@@ -29,8 +30,8 @@
     <section id="overview">
       <h2>Overview</h2>
       <p class="lede">
-        This page hosts qualitative audio samples and anonymized user-study videos referenced in the submission.
-        Replace placeholder assets by searching this file for <code>REPLACE_AUDIO</code>, <code>REPLACE_IMAGE</code>, and <code>REPLACE_YOUTUBE</code>.
+        This page hosts qualitative audio samples and anonymized clips from <strong>LMDM Generative Delay Interactions</strong> referenced in the submission.
+        Replace placeholder assets by searching this file for <code>REPLACE_AUDIO</code> and <code>REPLACE_IMAGE</code>.
       </p>
       <p class="abstract">
         <strong>Abstract.</strong>
@@ -214,202 +215,85 @@
       </div>
     </section>
 
-    <section id="sketch-conditioned">
-      <h2>Sketch-conditioned generation</h2>
-      <p class="lede">
-        Conditioning follows top-k CQT + RMS (per paper). Replace sketch visuals under <code>images/sketch-conditioned/</code> and audio under <code>audio/sketch-conditioned/</code>.
-      </p>
-      <div class="compare-wrap">
-        <table class="compare-table">
-          <thead>
-            <tr>
-              <th>Sketch</th>
-              <th>Base LMDM</th>
-              <th>LMDM (Enc–Dec)</th>
-              <th>LMDM (Block-causal)</th>
-              <th>Magenta RealTime</th>
-              <th>Stable Audio Open</th>
-              <th>MusicGen stereo</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <!-- REPLACE_IMAGE: sketch PNG/WebP -->
-                <img class="sketch-thumb" src="images/sketch-conditioned/sketch-ex01.png" alt="Sketch visualization for example 1">
-              </td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex01-base.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex01-encdec.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex01-block.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex01-magenta.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex01-sao.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex01-musicgen.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-            </tr>
-            <tr>
-              <td>
-                <img class="sketch-thumb" src="images/sketch-conditioned/sketch-ex02.png" alt="Sketch visualization for example 2">
-              </td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex02-base.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex02-encdec.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex02-block.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex02-magenta.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex02-sao.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex02-musicgen.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-            </tr>
-            <tr>
-              <td>
-                <img class="sketch-thumb" src="images/sketch-conditioned/sketch-ex03.png" alt="Sketch visualization for example 3">
-              </td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex03-base.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex03-encdec.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex03-block.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex03-magenta.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex03-sao.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex03-musicgen.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-            </tr>
-            <tr>
-              <td>
-                <img class="sketch-thumb" src="images/sketch-conditioned/sketch-ex04.png" alt="Sketch visualization for example 4">
-              </td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex04-base.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex04-encdec.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex04-block.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex04-magenta.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex04-sao.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex04-musicgen.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-            </tr>
-            <tr>
-              <td>
-                <img class="sketch-thumb" src="images/sketch-conditioned/sketch-ex05.png" alt="Sketch visualization for example 5">
-              </td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex05-base.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex05-encdec.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex05-block.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex05-magenta.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex05-sao.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/sketch-conditioned/ex05-musicgen.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
 
     <section id="accompaniment">
-      <h2>Accompaniment / live jamming</h2>
+      <h2>Accompaniment generation</h2>
       <p class="lede">
-        Input stem is fixed across compared columns where applicable. Replace audio under <code>audio/accompaniment/</code>.
+        Each row is a different accompaniment example. Columns vary the <strong>stem lookahead</strong>: how far into the future of the conditioning stem the model can see at inference time.
       </p>
+      <dl class="lookahead-legend">
+        <dt>+2 s lookahead</dt><dd>The model sees 2 seconds <em>ahead</em> of the current playback position in the stem it accompanies.</dd>
+        <dt>0 s lookahead</dt><dd>The model sees the stem only up to the <em>current</em> playback position — no future information.</dd>
+        <dt>−2 s lookahead</dt><dd>The model sees the stem only up to <em>2 seconds before</em> the current playback position — fully causal with an added buffer delay.</dd>
+      </dl>
       <div class="compare-wrap">
         <table class="compare-table">
           <thead>
             <tr>
-              <th>Condition</th>
-              <th>Input stem</th>
-              <th>Base LMDM</th>
-              <th>LMDM (Enc–Dec)</th>
-              <th>LMDM (Block-causal)</th>
+              <th>Example</th>
+              <th>Lookahead +2 s</th>
+              <th>Lookahead 0 s</th>
+              <th>Lookahead −2 s</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="prompt-cell">
-                <!-- REPLACE_ACCOMP_1 -->
-                Example 1 (instrument / setting)
-              </td>
-              <td><audio controls preload="none"><source src="audio/accompaniment/ex01-input.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/accompaniment/ex01-base.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/accompaniment/ex01-encdec.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/accompaniment/ex01-block.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
+              <td class="prompt-cell">Example 1</td>
+              <td><audio controls preload="none"><source src="audio/accompaniment/2s/0.wav" type="audio/wav"></audio></td>
+              <td><audio controls preload="none"><source src="audio/accompaniment/0s/0.wav" type="audio/wav"></audio></td>
+              <td><audio controls preload="none"><source src="audio/accompaniment/-2s/0.wav" type="audio/wav"></audio></td>
             </tr>
             <tr>
-              <td class="prompt-cell">
-                <!-- REPLACE_ACCOMP_2 -->
-                Example 2 (instrument / setting)
-              </td>
-              <td><audio controls preload="none"><source src="audio/accompaniment/ex02-input.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/accompaniment/ex02-base.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/accompaniment/ex02-encdec.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/accompaniment/ex02-block.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
+              <td class="prompt-cell">Example 2</td>
+              <td><audio controls preload="none"><source src="audio/accompaniment/2s/1.wav" type="audio/wav"></audio></td>
+              <td><audio controls preload="none"><source src="audio/accompaniment/0s/1.wav" type="audio/wav"></audio></td>
+              <td><audio controls preload="none"><source src="audio/accompaniment/-2s/1.wav" type="audio/wav"></audio></td>
             </tr>
             <tr>
-              <td class="prompt-cell">
-                <!-- REPLACE_ACCOMP_3 -->
-                Example 3 (instrument / setting)
-              </td>
-              <td><audio controls preload="none"><source src="audio/accompaniment/ex03-input.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/accompaniment/ex03-base.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/accompaniment/ex03-encdec.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/accompaniment/ex03-block.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
+              <td class="prompt-cell">Example 3</td>
+              <td><audio controls preload="none"><source src="audio/accompaniment/2s/2.wav" type="audio/wav"></audio></td>
+              <td><audio controls preload="none"><source src="audio/accompaniment/0s/2.wav" type="audio/wav"></audio></td>
+              <td><audio controls preload="none"><source src="audio/accompaniment/-2s/2.wav" type="audio/wav"></audio></td>
             </tr>
             <tr>
-              <td class="prompt-cell">
-                <!-- REPLACE_ACCOMP_4 -->
-                Example 4 (instrument / setting)
-              </td>
-              <td><audio controls preload="none"><source src="audio/accompaniment/ex04-input.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/accompaniment/ex04-base.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/accompaniment/ex04-encdec.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/accompaniment/ex04-block.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-            </tr>
-            <tr>
-              <td class="prompt-cell">
-                <!-- REPLACE_ACCOMP_5 -->
-                Example 5 (instrument / setting)
-              </td>
-              <td><audio controls preload="none"><source src="audio/accompaniment/ex05-input.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/accompaniment/ex05-base.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/accompaniment/ex05-encdec.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
-              <td><audio controls preload="none"><source src="audio/accompaniment/ex05-block.wav" type="audio/wav"></audio><!-- REPLACE_AUDIO --></td>
+              <td class="prompt-cell">Example 4</td>
+              <td><audio controls preload="none"><source src="audio/accompaniment/2s/3.wav" type="audio/wav"></audio></td>
+              <td><audio controls preload="none"><source src="audio/accompaniment/0s/3.wav" type="audio/wav"></audio></td>
+              <td><audio controls preload="none"><source src="audio/accompaniment/-2s/3.wav" type="audio/wav"></audio></td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <section id="user-study">
-      <h2>User study — musician interactions</h2>
+    <section id="generative-delay">
+      <h2>LMDM Generative Delay Interactions</h2>
       <p class="lede">
-        Anonymized screen captures hosted on YouTube. Replace each iframe <code>src</code> with <code>https://www.youtube.com/embed/VIDEO_ID</code> (privacy-enhanced: <code>youtube-nocookie.com</code> optional).
+        Sessions used the real-time generative delay deployment described in the paper; anonymized screen captures are hosted on YouTube. <strong>If you cannot see the thumbnail, the link will take you to YouTube.</strong>
       </p>
       <div class="video-grid">
         <article class="video-card">
-          <h3>P1 — guitarist</h3>
-          <p>Jamendo self-forced generative delay (representative clip).</p>
-          <!-- REPLACE_YOUTUBE: set src="https://www.youtube.com/embed/YOUR_VIDEO_ID" -->
-          <iframe src="about:blank" title="User study video P1–a (placeholder)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+          <h3>Guitarist demo with Jamendo trained LMDM (Enc-Dec, arc-forced, 230/10 context/block_size)</h3>
+          <p>This clip shows a guitarist using the generative delay effect to play a song. This particular clip was generated with the prompt "EDM, strong sub bass groove, soaring synth leads". Notice how the delay effect transforms his guitar signal while maintaining a strong rhythmic structure the low end.</p>
+          <iframe src="https://www.youtube-nocookie.com/embed/MjrmwBbSvmM" title="guitarist demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
         </article>
         <article class="video-card">
-          <h3>P1 — guitarist</h3>
-          <p>Alternate interaction / challenging moment.</p>
-          <!-- REPLACE_YOUTUBE: set iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" -->
-          <iframe src="about:blank" title="User study video P1–b (placeholder)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+          <h3>Saxophonist demo with Jamendo trained LMDM (Enc-Dec, arc-forced, 230/10 context/block_size, drum loop passed through sketch conditions for rhythmic consistency)</h3>
+          <p>This clip shows a saxophonist using the generative delay effect. Same prompt as above, notice how as he learns that playing a particular triggers a deep sub bass punch, while also mimicking his playing with a synth lead as a delay, allowing him to create  an orchestrated and dynamic mix on the fly. </p>
+          <iframe src="https://www.youtube-nocookie.com/embed/5jppDW2WNi4" title="saxophonist demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
         </article>
         <article class="video-card">
-          <h3>P2 — saxophonist</h3>
-          <p>Foley-style timbral augmentation (representative clip).</p>
-          <!-- REPLACE_YOUTUBE: set iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" -->
-          <iframe src="about:blank" title="User study video P2–a (placeholder)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+          <h3>Cellist with humpback whale calls trained LMDM (Enc-Dec, not arc-forced, 255/47 context/block_size)</h3>
+          <p>This clip documents the first performance for the generative delay trained on humpback whale calls. The whale sounds start to come in at 2:43.</p>
+          <iframe src="https://www.youtube-nocookie.com/embed/LrnurAWsxEc" title="cello2whale" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
         </article>
         <article class="video-card">
-          <h3>P2 — saxophonist</h3>
-          <p>Alternate interaction / challenging moment.</p>
-          <!-- REPLACE_YOUTUBE: set iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" -->
-          <iframe src="about:blank" title="User study video P2–b (placeholder)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-        </article>
-        <article class="video-card">
-          <h3>P3 — cellist</h3>
-          <p>Representative clip.</p>
-          <!-- REPLACE_YOUTUBE: set iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" -->
-          <iframe src="about:blank" title="User study video P3–a (placeholder)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-        </article>
-        <article class="video-card">
-          <h3>P3 — cellist</h3>
-          <p>Alternate interaction / challenging moment.</p>
-          <!-- REPLACE_YOUTUBE: set iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" -->
-          <iframe src="about:blank" title="User study video P3–b (placeholder)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+          <h3>Saxophonist with FSD50K trained LMDM (Enc-Dec, not arc-forced, 255/47 context/block_size)</h3>
+          <p>This clip demonstrates the foley model being prompted to regenerate the saxophonists playing as birdsong. This model has a three second delay.</p>
+          <iframe src="https://www.youtube-nocookie.com/embed/dwGfOUc8LWo" title="birdsong" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
         </article>
       </div>
-      <p class="placeholder-note">Replace placeholder embed IDs before submission. Study procedures are summarized in the paper; institutional details omitted for anonymity.</p>
+      <p class="placeholder-note">Protocols are summarized in the paper; institutional details omitted for anonymity.</p>
     </section>
   </main>
 
