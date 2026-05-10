@@ -38,17 +38,17 @@
     <section id="text-conditioned">
       <h2>Text-conditioned generation</h2>
       <p class="lede">
-        Each row is one text prompt. Columns compare the base model (no fine-tuning) against the fine-tuned LMDM variants in block-causal (BC) and encoder-decoder (ED) configurations. Each cell shows two samples: <strong>primed</strong> (model given an audio context prefix) and <strong>unprimed</strong> (generation from scratch).
+        Each row is one text prompt. Columns compare the fine-tuned LMDM variants against the fine-tuned + ARC-forced LMDM variants in block-causal (BC) and encoder-decoder (ED) configurations. Each cell shows two samples: <strong>primed</strong> (model given an audio context prefix) and <strong>unprimed</strong> (generation from scratch).
       </p>
       <div class="compare-wrap">
         <table class="compare-table">
           <thead>
             <tr>
               <th>Prompt</th>
-              <th>Base (BC)</th>
-              <th>Base (ED)</th>
               <th>LMDM (BC)</th>
               <th>LMDM (ED)</th>
+              <th>LMDM + ARC-forced (BC)</th>
+              <th>LMDM + ARC-forced (ED)</th>
             </tr>
           </thead>
           <tbody>
